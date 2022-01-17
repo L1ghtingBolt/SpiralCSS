@@ -6,9 +6,102 @@ body {
     color: $primary-color;
 }
 
+$colours: ("blue": #25f, "red": #f25, "white": #dfdfdf, "black": #0f0f0f, "yellow": #fd5);
+
+@mixin btn {
+    color: white;
+    border: none;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+
+
+$smsizes: ("md": 5px, "sm": 2px, "xl": 10px, "2xl": 15px);
+$sizes: ("md": 10px, "sm": 5px, "xl": 15px, "2xl": 20px);
+
+@each $name, $hex in $colours{
+    .btn-#{$name} {
+        @include btn;
+        background-color: $hex;
+        transition: background-color 200ms ease-in-out;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+@each $name, $size in $sizes { 
+    .rounded-#{$name} {
+        border-radius: $size;
+    }
+}
+
+@each $name, $size in $smsizes { 
+    .border-#{$name}{
+        border: $size solid black;
+    }
+}
+
+@each $name, $hex in $colours{
+    .color-#{$name} {
+        color: $hex;
+    }
+    .border-#{$name} {
+        border-color: $hex;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%, -50%);
+}
+
 @for $i from 1 through 10 {
-    $fontsize: 10px * $i;
+    $fontsize: 8px * $i;
     .font-#{$i} { 
         font-size: $fontsize;
-        }
+    }
+    .h-#{$i} {
+        height: $fontsize;
+    }
+    .w-#{$i} {
+        width: $fontsize;
+    }
+    .m-#{$i} {
+        margin: $fontsize;
+    }
+    .p-#{$i} {
+        padding: $fontsize;
+    }
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.w-screen {
+    width: 100vw;
 }
