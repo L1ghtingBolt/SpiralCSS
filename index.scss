@@ -4,9 +4,10 @@ $primary-color: #333;
 body {
     font: 100% $font-stack;
     color: $primary-color;
+    margin: 0;
 }
 
-$colours: ("blue": #25f, "red": #f25, "white": #dfdfdf, "black": #0f0f0f, "yellow": #fd5);
+$colours: ("blue": #25f, "red": #f25, "white": #dfdfdf, "black": #0f0f0f, "textblack": #333, "yellow": #fd5, "green": rgb(34, 255, 144));
 
 @mixin btn {
     color: white;
@@ -23,17 +24,44 @@ $sizes: ("md": 10px, "sm": 5px, "xl": 15px, "2xl": 20px);
     .btn-#{$name} {
         @include btn;
         background-color: $hex;
-        transition: background-color 200ms ease-in-out;
+        transition: filter 50ms ease-in-out;
         &:hover {
-            opacity: 0.8;
+            filter: sepia(30%);
+        }
+        &:active {
+            filter: sepia(90%);
         }
     }
+
+    .bg-#{$name} {
+        background-color: $hex;
+    }
+}
+
+.nav {
+    position: sticky;
+    height: 50px;
 }
 
 @each $name, $size in $sizes { 
     .rounded-#{$name} {
         border-radius: $size;
     }
+}
+
+.rounded-max {
+    border-radius: 50vw;
+}
+
+.dec-none {
+    text-decoration: none;
+}
+
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
 }
 
 @each $name, $size in $smsizes { 
@@ -59,34 +87,87 @@ $sizes: ("md": 10px, "sm": 5px, "xl": 15px, "2xl": 20px);
     display: flex;
 }
 
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inlineblock {
+    display: inline-block;
+}
+
 .flex-center {
     justify-content: center;
     align-items: center;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
 }
 
 .absolute-center {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateY(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
-@for $i from 1 through 10 {
+@for $i from 0 through 10 {
     $fontsize: 8px * $i;
-    .font-#{$i} { 
+    .font-#{$i} {
         font-size: $fontsize;
     }
+}
+
+@for $i from 0 through 30 {
+    $wh: 25px * $i;
+    $mp: 10px * $i;
     .h-#{$i} {
-        height: $fontsize;
+        height: $wh;
     }
     .w-#{$i} {
-        width: $fontsize;
+        width: $wh;
     }
     .m-#{$i} {
-        margin: $fontsize;
+        margin: $mp;
     }
     .p-#{$i} {
-        padding: $fontsize;
+        padding: $mp;
+    }
+    .ml-#{$i} {
+        margin-left: $mp;
+    }
+    .pl-#{$i} {
+        padding-left: $mp;
+    }
+    .mr-#{$i} {
+        margin-right: $mp;
+    }
+    .pr-#{$i} {
+        padding-right: $mp;
+    }
+    .mb-#{$i} {
+        margin-bottom: $mp;
+    }
+    .pb-#{$i} {
+        padding-bottom: $mp;
+    }
+    .mt-#{$i} {
+        margin-top: $mp;
+    }
+    .pt-#{$i} {
+        padding-top: $mp;
     }
 }
 
@@ -104,4 +185,85 @@ $sizes: ("md": 10px, "sm": 5px, "xl": 15px, "2xl": 20px);
 
 .w-screen {
     width: 100vw;
+}
+
+.m-full {
+    margin: 100%;
+}
+
+.p-full {
+    padding: 100%;
+}
+
+.m-screen {
+    margin: 100vh;
+}
+
+.p-screen {
+    padding: 100vw;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+.pl-auto {
+    padding-left: auto;
+}
+.mr-auto {
+    margin-right: auto;
+}
+.pr-auto {
+    padding-right: auto;
+}
+.mb-auto {
+    margin-bottom: auto;
+}
+.pb-auto {
+    padding-bottom: auto;
+}
+.mt-auto {
+    margin-top: auto;
+}
+.pt-auto {
+    padding-top: auto;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.linethrough {
+    text-decoration: line-through;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+.bbox {
+    box-sizing: border-box;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.static {
+    position: static;
 }

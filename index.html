@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>SpiralCSS - CSS Framework</title>
+    <link rel="stylesheet" href="./css/index.min.css">
 </head>
 <body>
-    <Button class="rounded-2xl border-sm border-red btn-yellow p-1 color-black">Yellow button</Button>
+    <div class="nav bg-yellow h-3 mb-2 flex">
+        <img class="bbox m-1 rounded-max" src="./assets/spiral.png" alt="SpiralCSS - CSS Framework">
+        <h1 class="m-1 font-6">SpiralCSS</h1>
+        <a class="m-2 float-right font-3 dec-none ml-auto" href="./docs.html">Docs</a>
+    </div>
+    <Button class="ml-5 rounded-2xl border-sm border-red btn-yellow p-1 color-black">Yellow button</Button>
     <Button class="color-black rounded-2xl border-sm border-black btn-white p-1">White button</Button>
     <Button class="rounded-2xl border-sm border-blue btn-red p-1">Red button</Button>
     <Button class="rounded-2xl border-sm border-red btn-blue p-1">Blue button</Button>
-    <h1 class="font-5">Header 1</h1>
-    <h1 class="font-4">Header 2</h1>
-    <h1 class="font-3">Header 3</h1>
-    <h1 class="font-2">Header 4</h1>
-    <div id="container" class="flex flex-center h-screen">
-        <div class="btn-white color-black flex">Centered</div>
+    <div id="headers" class="ml-5">
+        <h1 class="font-5">Header 1</h1>
+        <h1 class="font-4">Header 2</h1>
+        <h1 class="font-3">Header 3</h1>
+        <h1 class="font-2">Header 4</h1>
+    </div>
+    <h1 class="font-5 center">Centered Header 1</h1>
+    <div id="container" class="flex flex-center h-screen border-md bbox m-10">
+        <div class="bg-green h-20 w-20 border-xl border-blue color-blue p-15 font-5 center bbox">Flex centered</div>
+    </div>
+    <div id="container" class="relative m-10 h-screen border-md">
+        <div class="bg-green h-20 absolute-center p-15 bbox w-20 border-xl border-blue color-blue font-5 center">Absolute centered</div>
     </div>
 </body>
 </html>
