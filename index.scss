@@ -1,0 +1,14 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+
+@for $i from 1 through 10 {
+    $fontsize: 10px * $i;
+    .font-#{$i} { 
+        font-size: $fontsize;
+        }
+}
