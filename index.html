@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpiralCSS - CSS Framework</title>
-    <link rel="stylesheet" href="./dist/index.min.css">
-</head>
-<body>
-    <div class="nav bg-yellow h-3 mb-2 flex">
-        <img class="bbox m-1 rounded-max" src="./assets/spiral.png" alt="SpiralCSS - CSS Framework">
-        <h1 class="m-1 font-6">SpiralCSS</h1>
-        <a class="m-2 float-right font-3 dec-none ml-auto" href="./docs.html">Docs</a>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpiralCSS</title>
+  </head>
+  <body>
+    <img class="rounded-max shadow-2 w-10 ml-20 mt-20 mb-0" src="./assets/spiral.png" alt="">
+    <script type="module" src="/main.js"></script>
+    <h1 class="font-90 m-20">Heading 1</h1>
+    <h2 class="font-80 m-20">Heading 2</h2>
+    <h3 class="font-70 m-20">Heading 3</h3>
+    <h4 class="font-60 m-20 underline">Heading 4</h4>
+    <h5 class="font-50 m-20">Heading 5</h5>
+    <button class="btn-red border-4 border-darkred text-white rounded-10 font-20 m-20">Red Btn</button>
+    <button class="btn-yellow border-4 rounded-10 border-darkyellow  font-20 m-20">Yellow Btn</button>
+    <button class="btn-green border-4 text rounded-10 font-20 border-darkgreen m-20">Green Btn</button>
+    <button class="btn-white border-4 rounded-10 border-gray font-20 m-20">White Btn</button>
+    <button class="btn-textblack border-4 text-white rounded-10 font-20 m-20">Black Btn</button>
+    <button class="btn-blue border-4 text-white border-darkblue rounded-10 font-20 m-20">Blue Btn</button>
+    <div class="container">
+      <div class="flex border-4 w-20 h-20 m-auto">
+        <div class="m-auto rounded-10 center p-10 text-white bold border-4 w-6 h-6 bg-red">
+          flex centered
+        </div>
+      </div>
     </div>
-    <Button class="ml-5 rounded-2xl border-sm border-red btn-yellow p-1 color-black">Yellow button</Button>
-    <Button class="color-black rounded-2xl border-sm border-black btn-white p-1">White button</Button>
-    <Button class="rounded-2xl border-sm border-blue btn-red p-1">Red button</Button>
-    <Button class="rounded-2xl border-sm border-red btn-blue p-1">Blue button</Button>
-    <div id="headers" class="ml-5">
-        <h1 class="font-5">Header 1</h1>
-        <h1 class="font-4">Header 2</h1>
-        <h1 class="font-3">Header 3</h1>
-        <h1 class="font-2">Header 4</h1>
+    <div class="mt-50 container">
+      <div class="relative border-4 rounded-max shadow-4 w-20 h-20 m-auto">
+        <div class="absolute-center text-shadow-4 shadow-2 center rounded-10 p-10 text-white bold border-4 w-6 h-6 bg-red">
+          absolute centered
+        </div>
+      </div>
     </div>
-    <h1 class="font-5 center">Centered Header 1</h1>
-    <div id="container" class="flex h-screen border-md bbox m-10">
-        <div class="bg-green h-20 outline-xl outline-red shadow-sm flex dashed w-20 border-xl flex-center border-blue color-blue p-15 font-5 center bbox">flex-center + shadow-2xl</div>
-    </div>
-    <div id="container" class="relative m-10 h-screen border-md">
-        <div class="bg-green h-20 dotted text-shadow-sm absolute-center p-15 bbox w-20 border-xl border-blue color-blue font-5 center">absolute-center + text-shadow-sm</div>
-    </div>
-</body>
+  </body>
 </html>

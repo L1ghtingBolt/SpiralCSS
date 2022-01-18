@@ -1,0 +1,266 @@
+@use "sass:math";
+@import url('./simplify.sass');
+
+/* ===========
+! Variables
+============ */
+
+$positions: absolute, relative, fixed, static, sticky;
+$displays: block, inline, flex, inline-flex, inline-block, grid, table, flow;
+
+$colours: (
+  "red": #f34,
+  "darkred": #a12,
+  "blue": #43f,
+  "darkblue": #11a,
+  "white": #efefef,
+  "gray": #aaa,
+  "black": #0f0f0f,
+  "textblack": #333,
+  "cyan": #0df,
+  "darkcyan": #09a,
+  "blueish": #05f,
+  "green": #5f5,
+  "darkgreen": #2a2,
+  "purple": #90f,
+  "darkpurple": #40a,
+  "violet": #d9f,
+  "darkviolet": #a6d,
+  "brown": #610,
+  "darkbrown": #400,
+  "pink": #f69,
+  "darkpink": #a36,
+  "bluent": #0af,
+  "yellow": #ff5,
+  "darkyellow": #bb2,
+);
+
+
+$sizes: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70,72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100;
+
+/* ===========
+! Template classes (btn, nav...)
+============ */
+
+@mixin btn($col) {
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: $col;
+  border-radius: 50vw;
+  transition: background-color 100ms ease-in-out;
+  &:hover {
+    background-color: darken($col, 25%);
+  }
+  &:active {
+    background-color: darken($col, 35%);
+  }
+}
+
+@each $name, $col in $colours {
+  .btn-#{$name} {
+    @include btn($col);
+  }
+  .text-#{$name} {
+    color: $col;
+  }
+  .btn-black {
+    &:hover {
+      background-color: lighten(black, 25%);
+    }
+    &:active {
+      background-color: lighten(black, 35%);
+    }
+  }
+  .btn-textblack {
+    &:hover {
+      background-color: lighten(#333, 25%);
+    }
+    &:active {
+      background-color: lighten(#333, 35%);
+    }
+  }
+}
+
+/* ===========
+! Utility classes (p, m, h, w)...
+============ */
+
+/* ===========
+* Mixins
+============ */
+
+@mixin paddings-margins($w, $h, $p, $m) {
+  .w-#{$w} {
+    width: $w + rem;
+  }
+  .p-#{$w} {
+    padding: $p + px;
+  }
+  .m-#{$w} {
+    margin: $m + px;
+  }
+  .pl-#{$w} {
+    padding-left: $p + px;
+  }
+  .ml-#{$w} {
+    margin-left: $m + px;
+  }
+  .pr-#{$w} {
+    padding-right: $p + px;
+  }
+  .mr-#{$w} {
+    margin-right: $m + px;
+  }
+  .pt-#{$w} {
+    padding-top: $p + px;
+  }
+  .mt-#{$w} {
+    margin-top: $m + px;
+  }
+  .pb-#{$w} {
+    padding-bottom: $p + px;
+  }
+  .mb-#{$w} {
+    margin-bottom: $m + px;
+  }
+  .h-#{$w} {
+    height: $h + rem;
+  }
+  .m-auto {
+    margin: auto;
+  }
+  .p-auto {
+    padding: auto;
+  }
+  .ml-auto {
+    margin-left: auto;
+  }
+  .pl-auto {
+    padding-left: auto;
+  }
+  .mr-auto {
+    margin-right: auto;
+  }
+  .pr-auto {
+    padding-right: auto;
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
+  .pt-auto {
+    padding-top: auto;
+  }
+  .mb-auto {
+    margin-bottom: auto;
+  }
+  .pb-auto {
+    padding-bottom: auto;
+  }
+}
+
+@mixin borders($s, $coln, $col) {
+  .border-#{$s} {
+    border: $s + px solid black;
+  }
+  .border-#{$coln} {
+    border-color: $col;
+  }
+  .rounded-#{$s} {
+    border-radius: $s + px;
+  }
+  .rounded-max {
+    border-radius: 50vw;
+  }
+}
+
+@mixin background($n, $c) {
+  .bg-#{$n} {
+    background-color: $c;
+  }
+}
+
+@mixin displays-positions {
+  @each $dis in $displays {
+    .#{$dis} {
+      display: $dis;
+    }
+  }
+  @each $pos in $positions {
+    .#{$pos} {
+      position: $pos;
+    }
+  }
+  .flex-center {
+    align-items: center;
+    justify-self: center;
+    display: flex;
+  }
+  .absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,  -50%)
+  }
+}
+
+@mixin text-properties {
+  .dec-none {
+    text-decoration: none;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .linethrough {
+    text-decoration-line: line-through;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+}
+
+@mixin shadows($size) {
+  .shadow-#{$size} {
+    box-shadow: 0px 0px $size * 5 + px $size + px #000a;
+  }
+  .text-shadow-#{$size} {
+    text-shadow: 0px 0px $size  + px #000f;
+  }
+}
+
+/* ===========
+* Loops
+============ */
+
+
+@each $s in $sizes {
+  .font-#{$s} {
+    font-size: $s + px;
+  }
+  @include paddings-margins($s, $s, $s, $s);
+  @each $n, $col in $colours {
+    @include borders($s, $n, $col);
+  }
+}
+
+@each $n, $c in $colours {
+  @include background($n, $c);
+}
+
+@each $s in $sizes {
+  @include shadows($s);
+}
+
+/* ===========
+? Includes
+============ */
+
+@include displays-positions;
+@include text-properties;
