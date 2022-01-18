@@ -65,8 +65,18 @@ $sizes: ("md": 10px, "sm": 5px, "xl": 15px, "2xl": 20px);
 }
 
 @each $name, $size in $smsizes { 
+    $sprsize: $size * 2;
     .border-#{$name}{
         border: $size solid black;
+    }
+    .outline-#{$name}{
+        outline: $size solid black;
+    }
+    .shadow-#{$name} {
+        box-shadow: 0px 0px $sprsize $size #0f0f0f33;
+    }
+    .text-shadow-#{$name} {
+        text-shadow: 2px 2px $size rgb(0, 0, 0, 0.2);
     }
 }
 
@@ -77,6 +87,29 @@ $sizes: ("md": 10px, "sm": 5px, "xl": 15px, "2xl": 20px);
     .border-#{$name} {
         border-color: $hex;
     }
+    .outline-#{$name} {
+        outline-color: $hex;
+    }
+}
+
+.dashed {
+    border-style: dashed;
+}
+
+.dotted {
+    border-style: dotted;
+}
+
+.double {
+    border-style: double;
+}
+
+.groove {
+    border-style: groove;
+}
+
+.outset {
+    border-style: outset;
 }
 
 .center {
@@ -100,8 +133,9 @@ $sizes: ("md": 10px, "sm": 5px, "xl": 15px, "2xl": 20px);
 }
 
 .flex-center {
-    justify-content: center;
-    align-items: center;
+    justify-self: center;
+    align-self: center;
+    margin: auto;
 }
 
 .block {

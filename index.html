@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpiralCSS - CSS Framework</title>
-    <link rel="stylesheet" href="./css/index.min.css">
+    <link rel="stylesheet" href="./dist/index.min.css">
 </head>
 <body>
     <div class="nav bg-yellow h-3 mb-2 flex">
@@ -24,11 +24,11 @@
         <h1 class="font-2">Header 4</h1>
     </div>
     <h1 class="font-5 center">Centered Header 1</h1>
-    <div id="container" class="flex flex-center h-screen border-md bbox m-10">
-        <div class="bg-green h-20 w-20 border-xl border-blue color-blue p-15 font-5 center bbox">Flex centered</div>
+    <div id="container" class="flex h-screen border-md bbox m-10">
+        <div class="bg-green h-20 outline-xl outline-red shadow-sm flex dashed w-20 border-xl flex-center border-blue color-blue p-15 font-5 center bbox">flex-center + shadow-2xl</div>
     </div>
     <div id="container" class="relative m-10 h-screen border-md">
-        <div class="bg-green h-20 absolute-center p-15 bbox w-20 border-xl border-blue color-blue font-5 center">Absolute centered</div>
+        <div class="bg-green h-20 dotted text-shadow-sm absolute-center p-15 bbox w-20 border-xl border-blue color-blue font-5 center">absolute-center + text-shadow-sm</div>
     </div>
 </body>
 </html>
