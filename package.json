@@ -1,26 +1,19 @@
 {
   "name": "spiralcss",
-  "version": "1.0.0",
-  "description": "A simple CSS library",
-  "main": "main.scss",
-  "author": "L1ghtingBolt",
-  "license": "MIT",
+  "version": "0.0.0",
   "scripts": {
-    "build": "rimraf css && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
-    "build-sass": "node-sass --output-style expanded ./index.scss ./css/index.css",
-    "build-cleancss": "cleancss -o ./css/index.min.css ./css/index.css",
-    "build-autoprefix": "postcss --use autoprefixer --map --output ./css/index.css ./css/index.css"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "files": [
-    "css"
-  ],
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "clean-css-cli": "^5.5.0",
-    "postcss-cli": "^9.1.0",
-    "rimraf": "^3.0.2"
+    "vite": "^2.7.2"
   },
   "dependencies": {
-    "node-sass": "^7.0.1"
-  }
+    "sass": "^1.48.0",
+    "spiralcss": ".\\spiralcss-v0.0.0.tgz"
+  },
+  "files": [
+    "dist/style.css"
+  ]
 }
