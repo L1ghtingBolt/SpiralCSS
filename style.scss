@@ -8,6 +8,8 @@
 $positions: absolute, relative, fixed, static, sticky;
 $displays: block, inline, flex, inline-flex, inline-block, grid, table, flow;
 
+$bstyles: dashed, dotted, solid, hidden, double, groove, ridge, inset, outset;
+
 $colours: (
   "red": #f34,
   "darkred": #a12,
@@ -256,6 +258,12 @@ $sizes: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 3
 
 @each $s in $sizes {
   @include shadows($s);
+}
+
+@each $d in $bstyles {
+  .#{$d} {
+    border-style: $d;
+  }
 }
 
 /* ===========
