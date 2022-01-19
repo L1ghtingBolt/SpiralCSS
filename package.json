@@ -1,5 +1,5 @@
 {
-  "name": "spiralcss",
+  "name": "spiralcss-web",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -10,9 +10,6 @@
     "vite": "^2.7.2"
   },
   "dependencies": {
-    "sass": "^1.48.0"
-  },
-  "files": [
-    "dist/style.css"
-  ]
+    "sass": "^1.49.0"
+  }
 }
