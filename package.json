@@ -10,8 +10,7 @@
     "vite": "^2.7.2"
   },
   "dependencies": {
-    "sass": "^1.48.0",
-    "spiralcss": ".\\spiralcss-v0.0.0.tgz"
+    "sass": "^1.48.0"
   },
   "files": [
     "dist/style.css"
