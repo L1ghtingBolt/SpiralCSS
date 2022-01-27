@@ -1,5 +1,6 @@
 {
   "name": "spiralcss-web",
+  "description": "Simple utility-first SCSS framework.",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
