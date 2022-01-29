@@ -928,6 +928,10 @@ summary {
 /* ===========
 * Mixins
 ============ */
+.center {
+  text-align: center;
+}
+
 /* ===========
 * Loops
 ============ */
