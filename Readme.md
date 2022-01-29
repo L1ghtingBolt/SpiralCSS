@@ -3,7 +3,7 @@ A simple utility-first SCSS framework. (Includes precompiled files.)
 
 ## Instalation: 
 Simply download the precompiled file under `dist/style.css`.
-Or, use the CDN version, with `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/L1ghtingBolt/SpiralCSS@latest/dist/style.css">`.
+Or, use the CDN version, with `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spiralcss@latest/dist/style.min.css">`.
 
 https://cdn.jsdelivr.net/gh/L1ghtingBolt/SpiralCSS@latest/dist/style.css
 
